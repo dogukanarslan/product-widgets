@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { useDispatch, useSelector } from 'react-redux';
 import type { TypedUseSelectorHook } from 'react-redux';
-import widgetReducer from './slices/widgetSlice';
+import widgetReducer from 'src/slices/widgetSlice';
 
 export const store = configureStore({
   reducer: { widgetReducer },
