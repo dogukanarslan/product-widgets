@@ -12,12 +12,12 @@ export const ColourButtons = (props: Props) => {
   const { selectedColour, getColour } = props;
 
   return (
-    <div className="flex gap-2">
+    <div className="flex gap-2" data-testid="colour-buttons">
       {COLOURS.map((colour) => (
         <button
           key={colour}
           onClick={() => getColour(colour)}
-          className={`h-8 w-8 hover:opacity-80 bg-${getColourClasses(colour)}${selectedColour === colour ? ' border-darkgray border-4' : ''}`}
+          className={`h-8 w-8 hover:opacity-80 bg-${getColourClasses(colour)}${selectedColour === colour ? 'border-4 border-darkgray' : ''}`}
         ></button>
       ))}
     </div>
