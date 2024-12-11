@@ -11,6 +11,7 @@ Product Widgets is an application that you can view, manage, and customize your 
 - Vitest
 - Jest
 - Tailwind CSS
+- Storybook
 
 ## How It Works
 
@@ -20,7 +21,7 @@ Product Widgets is an application that you can view, manage, and customize your 
 
 3. Only one widget can have the active state at a time.
 
-4. There are 3 mutable states for each wdiget. Colour, active state, and public profile link option
+4. There are 3 mutable states for each wdiget. Colour, active state, and public profile link option.
 
 5. Each widget state is store in the Redux store. State changes are on the client side after the inial fetch request.
 

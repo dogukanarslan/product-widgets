@@ -17,7 +17,7 @@ export const ColourButtons = (props: Props) => {
         <button
           key={colour}
           onClick={() => getColour(colour)}
-          className={`h-8 w-8 hover:opacity-80 bg-${getColourClasses(colour)}${selectedColour === colour ? 'border-4 border-darkgray' : ''}`}
+          className={`h-8 w-8 hover:opacity-80 bg-${getColourClasses(colour)} ${selectedColour === colour ? 'border-4 border-darkgray' : ''}`}
         ></button>
       ))}
     </div>
