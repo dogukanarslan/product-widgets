@@ -45,7 +45,7 @@ export const Widget = (props: Props) => {
             <span>Link to public profile</span>
             <div className="group relative flex">
               <InfoOutline className="h-4 w-4" />
-              <span className="absolute bottom-0 left-6 top-0 z-20 mx-auto block h-fit min-w-60 items-center rounded-md bg-white p-2 text-center text-sm text-black opacity-0 shadow-xl transition-opacity group-hover:opacity-100">
+              <span className="absolute -top-40 bottom-0 left-4 z-20 mx-auto block h-fit min-w-52 items-center rounded-md bg-white p-2 text-center text-sm text-black opacity-0 shadow-xl transition-opacity group-hover:opacity-100">
                 This widget links directly to your public profile so that you
                 can easily share your impact with your customers. Turn it off
                 here if you do not want the badge to link to it
