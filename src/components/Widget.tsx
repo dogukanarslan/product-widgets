@@ -10,6 +10,7 @@ import { ColourButtons } from 'src/components/ColourButtons';
 import { useAppDispatch } from 'src/store';
 import { activateWidget } from 'src/slices/widgetSlice';
 import { getColourClasses } from 'src/utils';
+import InfoOutline from 'src/svgs/info-outline.svg?react';
 
 interface Props {
   widget: ProductWidget;
@@ -23,7 +24,7 @@ export const Widget = (props: Props) => {
   const dispatch = useAppDispatch();
 
   return (
-    <div className="space-y-4">
+    <div className="w-full space-y-4">
       <div
         className={`flex gap-5 rounded-md p-5${getColourClasses(selectedColor)}`}
       >
@@ -40,14 +41,29 @@ export const Widget = (props: Props) => {
       </div>
       <div className="space-y-4 text-sm text-green">
         <div className="flex justify-between">
-          <span>Link to public profile</span>{' '}
+          <div className="flex items-center gap-2">
+            <span>Link to public profile</span>
+            <div className="group relative flex">
+              <InfoOutline className="h-4 w-4" />
+              <span className="absolute bottom-0 left-6 top-0 z-20 mx-auto block h-fit min-w-60 items-center rounded-md bg-white p-2 text-center text-sm text-black opacity-0 shadow-xl transition-opacity group-hover:opacity-100">
+                This widget links directly to your public profile so that you
+                can easily share your impact with your customers. Turn it off
+                here if you do not want the badge to link to it
+                <div className="my-4">
+                  <a href="#" className="text-green">
+                    View Public Profile
+                  </a>
+                </div>
+              </span>
+            </div>
+          </div>
           <Checkbox
             isChecked={linked}
             handleChange={() => dispatch(linkProfile(id))}
           />
         </div>
         <div className="flex justify-between">
-          <span>Badge colour</span>{' '}
+          <span>Badge colour</span>
           <ColourButtons
             selectedColour={selectedColor}
             getColour={(colour) =>
@@ -56,7 +72,7 @@ export const Widget = (props: Props) => {
           />
         </div>
         <div className="flex items-center justify-between">
-          <span>Activate badge</span>{' '}
+          <span>Activate badge</span>
           <Toggle
             isChecked={active}
             handleChange={(isActive) =>
