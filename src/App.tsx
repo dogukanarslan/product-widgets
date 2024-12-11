@@ -12,11 +12,11 @@ const App = () => {
   }, [dispatch]);
 
   return (
-    <div className="p-9">
-      <h3 className="mb-5 text-center text-3xl font-bold">
+    <div className="m-9 p-9 shadow-lg">
+      <h3 className="mb-5 border-b-2 border-darkgray pb-4 text-center text-3xl font-bold md:text-left">
         Per product widgets
       </h3>
-      <div className="space-y-5 px-3">
+      <div className="flex flex-col gap-5 px-3 md:flex-row">
         {data.map((widget) => (
           <Widget key={widget.id} widget={widget} />
         ))}
