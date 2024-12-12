@@ -34,9 +34,7 @@ export const Widget = (props: Props) => {
         </div>
         <div className="flex flex-col justify-center">
           <div>This product {action}</div>
-          <div className="font-bold">
-            {amount} {type}
-          </div>
+          <div className="font-bold">{generateWidgetLabel(type, amount)}</div>
         </div>
       </div>
       <div className="space-y-4 text-sm text-green">

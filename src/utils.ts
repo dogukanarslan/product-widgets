@@ -1,4 +1,7 @@
-import { ProductWidgetSelectedColor } from 'src/slices/widgetSlice';
+import {
+  ProductWidgetSelectedColor,
+  ProductWidgetType,
+} from 'src/slices/widgetSlice';
 
 export const getColourClasses = (colour: ProductWidgetSelectedColor) => {
   let colourClasses = '';
@@ -15,4 +18,20 @@ export const getColourClasses = (colour: ProductWidgetSelectedColor) => {
   }
 
   return colourClasses;
+};
+
+export const generateWidgetLabel = (
+  type: ProductWidgetType,
+  amount: number
+) => {
+  const result = `${amount}`;
+  if (type === ProductWidgetType.Carbon) {
+    return `${result} kgs of carbon`;
+  }
+
+  if (type === ProductWidgetType.Plastic) {
+    return `${result} plastic bottles`;
+  }
+
+  return `${result} ${type}`;
 };

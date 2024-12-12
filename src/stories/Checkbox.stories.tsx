@@ -32,7 +32,7 @@ export const Checked: Story = {
   },
 };
 
-export const UnChecked: Story = {
+export const Unchecked: Story = {
   args: {
     isChecked: false,
   },
