@@ -21,9 +21,9 @@ Product Widgets is an application that you can view, manage, and customize your 
 
 3. Only one widget can have the active state at a time.
 
-4. There are 3 mutable states for each wdiget. Colour, active state, and public profile link option.
+4. There are 3 mutable states for each widget. Colour, active state, and public profile link option.
 
-5. Each widget state is store in the Redux store. State changes are on the client side after the inial fetch request.
+5. Each widget state is stored in the Redux store. State changes are on the client side after the inial fetch request.
 
 6. Theme colors are stored in the tailwind configuration file and related classes are generated according to the project theme.
 
@@ -51,4 +51,9 @@ npm run build
 
 ```bash
 npm run test
+```
+
+5. View components on Storybook
+```bash
+npm run storybook
 ```
