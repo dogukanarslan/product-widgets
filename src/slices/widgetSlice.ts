@@ -13,7 +13,7 @@ export const fetchWidgets = createAsyncThunk(
 
 export enum ProductWidgetType {
   Carbon = 'carbon',
-  PlasticBottles = 'plastic bottles',
+  Plastic = 'plastic',
   Trees = 'trees',
 }
 

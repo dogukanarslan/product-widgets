@@ -4,12 +4,13 @@ import {
   ProductWidget,
 } from 'src/slices/widgetSlice';
 import { Toggle } from 'src/components/Toggle';
-import Logo from 'src/svgs/logo.svg?react';
+import { Tooltip } from 'src/components/Tooltip';
 import { Checkbox } from 'src/components/Checkbox';
 import { ColourButtons } from 'src/components/ColourButtons';
 import { useAppDispatch } from 'src/store';
 import { activateWidget } from 'src/slices/widgetSlice';
-import { getColourClasses } from 'src/utils';
+import { generateWidgetLabel, getColourClasses } from 'src/utils';
+import Logo from 'src/svgs/logo.svg?react';
 import InfoOutline from 'src/svgs/info-outline.svg?react';
 
 interface Props {
@@ -26,7 +27,7 @@ export const Widget = (props: Props) => {
   return (
     <div className="w-full space-y-4">
       <div
-        className={`flex gap-5 rounded-md p-5${getColourClasses(selectedColor)}`}
+        className={`flex gap-5 rounded-md p-3${getColourClasses(selectedColor)}`}
       >
         <div className="flex flex-col items-center justify-center">
           <Logo />
@@ -41,19 +42,22 @@ export const Widget = (props: Props) => {
         <div className="flex justify-between">
           <div className="flex items-center gap-2">
             <span>Link to public profile</span>
-            <div className="group relative flex">
+            <Tooltip
+              message={
+                <>
+                  This widget links directly to your public profile so that you
+                  can easily share your impact with your customers. Turn it off
+                  here if you do not want the badge to link to it
+                  <div className="my-4">
+                    <a href="#" className="font-bold text-green">
+                      View Public Profile
+                    </a>
+                  </div>
+                </>
+              }
+            >
               <InfoOutline className="h-4 w-4" />
-              <span className="absolute -top-40 bottom-0 left-4 z-20 mx-auto block h-fit min-w-52 items-center rounded-md bg-white p-2 text-center text-sm text-black opacity-0 shadow-xl transition-opacity group-hover:opacity-100">
-                This widget links directly to your public profile so that you
-                can easily share your impact with your customers. Turn it off
-                here if you do not want the badge to link to it
-                <div className="my-4">
-                  <a href="#" className="text-green">
-                    View Public Profile
-                  </a>
-                </div>
-              </span>
-            </div>
+            </Tooltip>
           </div>
           <Checkbox
             isChecked={linked}

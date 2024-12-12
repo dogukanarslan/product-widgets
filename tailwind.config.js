@@ -13,6 +13,7 @@ export default {
         blue: '#2e3a8c',
         green: '#3b755f',
         beige: '#f2ebdb',
+        ghostwhite: '#f9f9f9',
       },
     },
   },
